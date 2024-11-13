@@ -9,21 +9,7 @@ const authRoutes = require("./routes/auth");
 connectDB();
 
 const app = express();
-
-// Set up CORS with specific options
-const corsOptions = {
-    origin: ['http://localhost:5173', 'https://ristorante-alfiero-server-n8l2utsv4.vercel.app'],
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    credentials: true,
-    allowedHeaders: ['Content-Type'],
-  };
-
-app.use(cors(corsOptions));
-
-
-// Explicitly handle preflight requests for all routes
-app.options('*', cors(corsOptions));
-
+app.use(cors());
 app.use(bodyParser.json());
 
 
