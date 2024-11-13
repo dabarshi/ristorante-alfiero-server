@@ -28,6 +28,10 @@ app.use(bodyParser.json());
 
 
 // Routes
+app.get('/', function (req, res) {
+  res.send('Hello World');
+})
+
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/events', eventRoutes);
 app.use("/api/auth", authRoutes); // Use the authentication routes
