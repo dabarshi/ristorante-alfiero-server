@@ -15,7 +15,7 @@ const corsOptions = {
     origin: ['http://localhost:5173', 'https://ristorante-alfiero-server-n8l2utsv4.vercel.app'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    allowedHeaders: ['Content-Type'],
   };
 
 app.use(cors(corsOptions));
