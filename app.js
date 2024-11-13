@@ -9,7 +9,10 @@ const authRoutes = require("./routes/auth");
 connectDB();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:5173/', 'https://lovely-cupcake-e5723a.netlify.app/']
+}));
+
 app.use(bodyParser.json());
 
 
