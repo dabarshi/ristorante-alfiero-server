@@ -4,7 +4,9 @@ const bodyParser = require('body-parser');
 const connectDB = require('./config/db');
 const bookingRoutes = require('./routes/bookingRoutes');
 const eventRoutes = require('./routes/eventRoutes');
+const offerRoutes = require("./routes/offerRoutes");
 const authRoutes = require("./routes/auth");
+const contactRoutes = require("./routes/contactRoutes");
 
 connectDB();
 
@@ -21,6 +23,8 @@ app.get('/', function (req, res) {
 
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/events', eventRoutes);
+app.use("/api/offer", offerRoutes);
+app.use("/api/contact", contactRoutes);
 app.use("/api/auth", authRoutes); // Use the authentication routes
 
 module.exports = app;
