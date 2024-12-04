@@ -42,3 +42,18 @@ exports.getOffer = async (req, res) => {
     res.status(500).json({ message: "Server error", error });
   }
 };
+
+// Delete current offer
+exports.deleteOffer = async (req, res) => {
+  try {
+    const offer = await Offer.findOne();
+    if (!offer) {
+      return res.status(404).json({ message: "No offer available to delete" });
+    }
+
+    await Offer.deleteOne({ _id: offer._id });
+    res.json({ message: "Offer deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error });
+  }
+};
