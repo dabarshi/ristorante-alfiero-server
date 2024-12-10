@@ -19,7 +19,7 @@ app.use(cors());
 
 // Routes
 app.get("/", function (req, res) {
-  res.send("Hello World");
+  res.send("Welcome to Ristorante Alfiero");
 });
 
 app.use("/api/bookings", bookingRoutes);
